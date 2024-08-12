@@ -43,6 +43,17 @@ The dataset used in this study, obtained from Kaggle, consists of 3,064 MRI scan
 1. **Data Preprocessing**
    - Handling null values
    - Data augmentation using techniques like SMOTE
+   - #####  SMOTE (Synthetic Minority Over-sampling Technique) is a technique used in machine learning to address class imbalance in datasets. When you have a dataset where one class (typically the minority class) is underrepresented compared to other classes (typically the majority class), it can lead to biased model performance.
+- SMOTE works by generating synthetic examples of the minority class to balance the dataset. Here’s how it works:
+
+- Select a Minority Class Sample: For each instance in the minority class, SMOTE identifies its k-nearest neighbors in the feature space.
+
+- Generate Synthetic Examples: Synthetic samples are created by interpolating between the selected sample and its neighbors. This is done by taking the difference between the feature vector of the sample and its neighbor, multiplying it by a random number between 0 and 1, and then adding it to the original sample.
+
+- Add Synthetic Examples: These synthetic samples are then added to the original dataset, increasing the number of minority class examples.
+
+The goal of SMOTE is to improve the performance of models on imbalanced datasets by providing a more balanced distribution of classes, which helps the model learn better and make more accurate predictions.
+
 2. **Model Deployment**
    - Training with EfficientNet2 for feature extraction
    - Classifier training to predict tumor types
